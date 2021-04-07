@@ -7,9 +7,17 @@
       <link rel="stylesheet" href="css/style.css">
       <!-- development version, includes helpful console warnings -->
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <!-- axios cdn -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
       <title>API Email List</title>
    </head>
    <body>
+      <div id="app">
+         <button @click="generateEmails">genera 10 email</button>
+         <ul v-if="emailList.length > 0">
+            <li v-for="(email) in emailList">{{email.response}}</li>
+         </ul>
+      </div>
       <script src="js/script.js"></script>
    </body>
 </html>
